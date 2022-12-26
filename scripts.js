@@ -47,7 +47,6 @@ ListaDirecciones=Object.keys(direcciones);
     var cont1=1;
     var cont2=0;
     for(let direccion of ListaDirecciones){
-        cont2++;
         cont2=cont2+direcciones[direccion].length;
     }
 
@@ -56,8 +55,8 @@ ListaDirecciones=Object.keys(direcciones);
         for(i=0; i<direcciones[direccion].length;i++){
         datos.push("T"+cont+"_"+direccion+"\n"+(await Get_Data(direcciones[direccion][i],page)));
         console.clear();
-        console.log("Progreso: "+(cont1*100/(cont2)).toFixed(2)+"%");
-
+        console.log("Progreso: "+(cont1*100/(cont2)).toFixed(2)+"%"+"  "+cont1+"/"+cont2);
+   
         cont++;cont1++;
         if (cont==9){
             cont=3;
